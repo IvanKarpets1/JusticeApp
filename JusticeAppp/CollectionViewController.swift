@@ -2,7 +2,10 @@ import Foundation
 import UIKit
 
 class CollectionViewController: UICollectionViewController {
-
+    @IBOutlet var typeLabel: UILabel!
+    
+    @IBOutlet var typeImage: UIImageView!
+    
     var categories = [Category]()
     override func viewDidLoad() {
         super.viewDidLoad()
