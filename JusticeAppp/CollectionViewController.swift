@@ -34,7 +34,7 @@ class CollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! TypeCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! TypeCell
         cell.typeLabel.text = categories[indexPath.row].type
         cell.typeImage.image = categories[indexPath.row].image
         cell.backgroundColor = pickBackgroundColor(indexPath.row)
