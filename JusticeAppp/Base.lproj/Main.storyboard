@@ -177,6 +177,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Title" id="nrh-pl-Pfq"/>
+                    <connections>
+                        <outlet property="navTitle" destination="nrh-pl-Pfq" id="5YK-t7-xxR"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SMn-1B-3dU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

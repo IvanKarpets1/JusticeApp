@@ -36,7 +36,7 @@ class CollectionViewController: UICollectionViewController {
             
             let title = categories[(indexPath?.row)!].type
             
-            formVC.navigationController?.title = title
+            formVC.navTitle.title = title
         }
     }
     
