@@ -1,5 +1,5 @@
 //
-//  CollectionViewCell1.swift
+//  CollectionViewCell4.swift
 //  JusticeAppp
 //
 //  Created by Ivan Karpets on 6/8/19.
@@ -8,19 +8,11 @@
 
 import UIKit
 
+class CollectionViewCell4: UICollectionViewCell {
 
-class CollectionViewCell1: UICollectionViewCell {
-    
-   
-    @IBOutlet weak var textfield: UITextField!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
-        
+        // Initialization code
     }
 
-    
 }

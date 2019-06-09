@@ -17,7 +17,7 @@ class CollectionViewController: UICollectionViewController {
         categories = [Category(image: UIImage(named: "inclusive")!, type: "Інклюзивність"),
                       Category(image: UIImage(named: "building")!, type: "Інфраструктура"),
                       Category(image: UIImage(named: "cash")!, type: "Корупція"),
-                      Category(image: UIImage(named: "child")!, type: "Права дітей"),
+                      Category(image: UIImage(named: "family")!, type: "Сімейне право"),
                       Category(image: UIImage(named: "customer")!, type: "Права споживачів"),
                       Category(image: UIImage(named: "worker")!, type: "Права працівників"),
                       Category(image: UIImage(named: "racism")!, type: "Дискримінація"),
