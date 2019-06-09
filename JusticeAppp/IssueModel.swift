@@ -12,6 +12,11 @@ enum IssueStatus{
     case submitted, transmitted, considered, done, canceled
 }
 
+enum PersonCategory{
+    case invalid, elderly, homeless, others
+    
+}
+
 class Issue{
     
     var shortName: String
@@ -19,12 +24,18 @@ class Issue{
     var number: String
     var date: String
     lazy var statusText: String = self.defineStatusText(status: self.status)
+    var personCategory: PersonCategory
+    var sinPerson: String
+    var comment: String
     
-    init(name: String, status: IssueStatus, number: String, date: String) {
+    init(name: String, status: IssueStatus, number: String, date: String, personCategory: PersonCategory, sinPerson:String, comment: String ) {
         self.shortName = name
         self.status = status
         self.number = number
         self.date = date
+        self.personCategory = personCategory
+        self.sinPerson = sinPerson
+        self.comment = comment
     }
     
     func defineStatusText(status: IssueStatus)-> String{

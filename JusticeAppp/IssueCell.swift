@@ -10,6 +10,7 @@ import UIKit
 
 class IssueCell: UICollectionViewCell {
     
+    @IBOutlet weak var cellBackgroundView: UIView!
     @IBOutlet weak var statusBarView: UIView!
     @IBOutlet weak var shortTitleLabel: UILabel!
     @IBOutlet weak var numberOfTheIssueLabel: UILabel!

@@ -16,7 +16,8 @@ class IssuesViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        categories = [Issue( name: "Inclusive", status: .submitted, number: "#123", date: "21.12.19 12:00"), Issue(name: "s45678fvhjd",status: .transmitted, number: "#1222", date: "21.12.19 12:00")]
+        categories = [Issue( name: "Порошенко не любить інвалідів", status: .submitted, number: "#123", date: "21.12.19 12:00", personCategory: .invalid, sinPerson: "Хтось у місті", comment: "Ужас"),
+                      Issue(name: "Неподобство",status: .transmitted, number: "#1222", date: "21.12.19 12:00", personCategory: .elderly, sinPerson: "as", comment: "dsd")]
         
     }
     
@@ -38,6 +39,18 @@ class IssuesViewController: UICollectionViewController {
         
         cell.statusBarView.backgroundColor = getStatusColor(status: path.status)
         
+        cell.contentView.layer.cornerRadius = 12.0
+        cell.contentView.layer.borderWidth = 0
+        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+        cell.contentView.layer.masksToBounds = true;
+        
+        
+        cell.layer.shadowColor = UIColor.lightGray.cgColor
+        cell.layer.shadowOffset = CGSize(width:0,height: 0)
+        cell.layer.shadowRadius = 4.0
+        cell.layer.shadowOpacity = 1
+        cell.layer.masksToBounds = false
+        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
         return cell
     }
     
@@ -58,6 +71,19 @@ class IssuesViewController: UICollectionViewController {
         }
     }
     
+    func getPersonCategory(category: PersonCategory)-> String{
+        switch category {
+        case .elderly:
+            return "Особи похилого віку"
+        case .homeless:
+            return "Безхатченки"
+        case .invalid:
+            return " Особи з інвалідністю"
+        default:
+            return "інші"
+        }
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showIssueDetail" {
@@ -67,13 +93,19 @@ class IssuesViewController: UICollectionViewController {
             
             let indexPath = self.collectionView!.indexPath(for: cell) 
             
-            let title = categories[(indexPath?.row)!].shortName
-            
-            formVC.navTitle.title = title
+            let path = categories[(indexPath?.row)!]
+          
+            formVC.status = path.defineStatusText(status: path.status)
+            formVC.color = self.getStatusColor(status: path.status)
+            formVC.navTitle.title = path.shortName
+            formVC.shortTitle = path.shortName
+            formVC.number = path.number
+            formVC.date = path.date
+            formVC.statusBar?.backgroundColor = getStatusColor(status: path.status)
+            formVC.personCategory = getPersonCategory(category: path.personCategory)
+            formVC.sinPerson = path.sinPerson
+            formVC.comment = path.comment
             
         }
     }
-    
-    
-    
 }

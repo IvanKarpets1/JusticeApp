@@ -11,11 +11,40 @@ import UIKit
 class IssueDetailViewController: UIViewController {
 
     @IBOutlet weak var navTitle: UINavigationItem!
+    
+    @IBOutlet weak var topCell: IssueDetailCell!
+    
+    @IBOutlet weak var shortTitleLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusBar: UIView!
+    @IBOutlet weak var personCategroryLabel: UILabel!
+    @IBOutlet weak var sinPersonLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
+    
+    var shortTitle : String?
+    var number: String?
+    var date : String?
+    var status: String?
+    var personCategory: String?
+    var sinPerson: String?
+    var comment: String?
+    var color: UIColor?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.shortTitleLabel?.text = self.shortTitle
+        self.numberLabel?.text = self.number
+        self.dateLabel?.text = self.date
+        self.statusLabel?.text = self.status
+        self.personCategroryLabel?.text = self.personCategory
+        self.sinPersonLabel?.text = self.sinPerson
+        self.commentLabel?.text = self.comment
+        self.statusBar?.backgroundColor = self.color
     }
+    
+   
     
     
 
