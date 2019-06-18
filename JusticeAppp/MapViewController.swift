@@ -15,16 +15,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     let mapView = MKMapView()
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        self.title = "Оберіть місце"
         view.backgroundColor = .white
         
-        
         let leftMargin:CGFloat = 10
-        let topMargin:CGFloat = 25
+        let topMargin:CGFloat = 5
         let mapWidth:CGFloat = view.frame.size.width-20
-        let mapHeight:CGFloat = 600
-        
-        
+        let mapHeight:CGFloat = view.frame.height-10
        
         mapView.frame = CGRect(x: leftMargin, y: topMargin, width: mapWidth, height: mapHeight)
         mapView.delegate = self
